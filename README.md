@@ -5,10 +5,10 @@
 
 1. Update Country Code (2 letter) at System Configuration > Kernel::Output::HTML::Dashboard::Corona
 
-Default: MY
+    Default: MY
 
 2. Update CacheTTLLocal if needed at System Configuration > Kernel::Output::HTML::Dashboard::Corona
 
-Default: 3 (hour)
+    Default: 3 (hour)
 
 [![download.png](https://i.postimg.cc/FFkKW7qd/download.png)](https://postimg.cc/QVssVxjh)
