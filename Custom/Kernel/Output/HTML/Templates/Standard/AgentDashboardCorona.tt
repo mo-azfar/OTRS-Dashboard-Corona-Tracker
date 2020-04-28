@@ -1,0 +1,36 @@
+# This software comes with ABSOLUTELY NO WARRANTY. For details, see
+# the enclosed file COPYING for license information (GPL). If you
+# did not receive this file, see https://www.gnu.org/licenses/gpl-3.0.txt.
+# --
+<style>
+.corona {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin-left:auto; 
+  margin-right:auto;
+}
+
+.corona td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.corona tr:nth-child(even){background-color: #f2f2f2;}
+
+.corona tr:hover {background-color: #ddd;}
+
+.corona th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+
+<div>[% Data.table1 %]</div>
+<div class="Clear"></div><br/><br/>
+<div>[% Data.table2 %]</div>
+<div class="Clear"></div>
