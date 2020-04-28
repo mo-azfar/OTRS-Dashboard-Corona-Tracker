@@ -11,4 +11,4 @@
 
     Default: 3 (hour)
 
-[![download.png](https://i.postimg.cc/FFkKW7qd/download.png)](https://postimg.cc/QVssVxjh)
+[![download.png](https://i.postimg.cc/qqHgWftt/download.png)](https://postimg.cc/7GXxTWnD)
