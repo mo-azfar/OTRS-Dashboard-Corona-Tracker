@@ -84,13 +84,15 @@ sub Run {
 	-class => 'corona',
     -head => [@HeadData1],
 	);
+    
+    #if want use  table sections thead
+    #$table1->addSectionRow ( 'thead', 0, 'Country', 'Total Case', 'Total Recovered', 'Total Deaths', 'Active Case (Critical)' );
 
     my $Total = $ResponseData->{data}->{latest_data};
     my $Active = $Total->{confirmed} - $Total->{recovered} - $Total->{deaths};
     $table1->addRow($ResponseData->{data}->{name}, $Total->{confirmed}, $Total->{recovered}, $Total->{deaths}, "$Active ($Total->{critical})"); 
     #push to template
     $Data{table1}=$table1;
-    
     
     my $DateTimeObject = $Kernel::OM->Create(
         'Kernel::System::DateTime',
@@ -123,6 +125,14 @@ sub Run {
 	-class => 'corona',
     -head => [@HeadData2],
 	);
+    
+    #check for cuurent day data by data->timeline and data->today
+    if ( $Today[0]->{date} eq $Now && $ResponseData->{data}->{today}->{confirmed} ne $Today[0]->{new_confirmed} )
+    {
+        $Today[0]->{new_confirmed} = $ResponseData->{data}->{today}->{confirmed};
+        $Today[0]->{new_recovered} = 'Updating ..';
+        $Today[0]->{new_deaths} = $ResponseData->{data}->{today}->{deaths};
+    }
     
     $table2->addRow($Today[0]->{date}, $Today[0]->{new_confirmed}, $Today[0]->{new_recovered}, $Today[0]->{new_deaths});
     $table2->addRow($PrevOne[0]->{date}, $PrevOne[0]->{new_confirmed}, $PrevOne[0]->{new_recovered}, $PrevOne[0]->{new_deaths});
